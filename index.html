@@ -1,0 +1,120 @@
+<style>
+    .tabs_wrapper{
+
+    }
+    .tabs_wrapper .tabs_title{
+        display: flex;
+        gap:10px;
+        list-style: none;
+    }
+
+    .tabs_wrapper .tabs_title li{
+background-color: #eee;
+}
+.tabs_wrapper .tabs_title li a{
+    padding: 20px;
+    display: flex;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+}
+.tabs_wrapper .tabs_title li a:hover{
+background-color:burlywood;
+    color: #f00;
+}
+.tabs_wrapper .tabs_title li a:active,
+.tabs_wrapper .tabs_title li.active a{
+    background-color: aqua;
+    color: #000;
+}
+    .tabs_wrapper .tabs_content{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+    .tabs_wrapper .tabs_content li{
+        transition: all ease-in-out 0.3s;
+        opacity: 0;
+        display: none;
+        
+    }
+    .tabs_wrapper .tabs_content li.active{
+        opacity: 1;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+function accoriansInit(){
+    let accordian = document.querySelector('.tabs_wrapper');
+
+    let tabs = accordian.querySelectorAll('.tabs_title li');
+    let tabs_content = accordian.querySelectorAll('.tabs_content li');
+
+    function tabClick(ev,i){
+        ev.preventDefault();
+
+         for(let j=0, jn=tabs.length;   j<jn;    j++){
+
+             if(i==j){
+                 tabs_content[j].classList.add('active')
+                 tabs[j].classList.add('active');
+             }else{
+                 
+            tabs_content[j].classList.remove('active');
+            tabs[j].classList.remove('active');
+             }
+        }
+        
+    }
+
+    for(let i=0, n=tabs.length;   i<n;    i++){
+        tabs[i].addEventListener('click',function(e){
+            tabClick(e,i);
+        });
+    }
+    
+}
+// dom loaded event
+document.addEventListener('DOMContentLoaded',function(){
+    accoriansInit();
+});
+    
+    
+</script>
+<div class="tabs_wrapper">
+    <ul class="tabs_title">
+        <li class="active"><a href="#">Tab 1</a></li>
+        <li><a href="#">Tab 2</a></li>
+        <li><a href="#">Tab 3</a></li>
+        <li><a href="#">Tab 3</a></li>
+        <li><a href="#">Tab 3</a></li>
+        <li><a href="#">Tab 3</a></li>
+        <li><a href="#">Tab 3</a></li>
+        <li><a href="#">Tab 3</a></li>
+        <li><a href="#">Tab 3</a></li>
+    </ul>
+    <ul class="tabs_content">
+        <li class="active">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce urna sapien, mattis quis nisl eu, gravida volutpat nisl. Vestibulum rhoncus lacus libero, tincidunt dapibus massa placerat id. Cras elementum risus eu ipsum hendrerit laoreet. Etiam consectetur elit in rutrum imperdiet. Nunc placerat neque eu urna pharetra posuere. Vestibulum fringilla tellus dignissim condimentum commodo. Quisque lobortis justo laoreet, tempus orci vel, interdum nisl. Quisque tincidunt elementum volutpat. Suspendisse vitae mi tellus. Nulla facilisi. Etiam euismod placerat lectus, et varius eros ultricies ut. Phasellus eu blandit ligula, eleifend semper mi. Pellentesque dignissim euismod risus, non convallis arcu rhoncus at. Aliquam a arcu lacus. Nullam id ipsum facilisis, semper elit eget, rutrum neque.
+        </li>
+        <li>
+            Aliquam consectetur urna non urna condimentum, nec rutrum ipsum dignissim. Proin libero augue, ultricies ut bibendum ut, elementum eu lacus. Sed ornare id enim eu elementum. Integer luctus nulla vel facilisis elementum. Maecenas in rhoncus mi. Aliquam sed accumsan sem, eu malesuada massa. Aenean eget porta nibh. Nunc lectus tellus, consectetur eu lorem a, dictum fringilla nulla. In et libero et massa pellentesque rutrum. Quisque quis orci vel urna posuere tincidunt. Nullam arcu eros, tincidunt a ipsum in, varius sollicitudin erat. Aenean efficitur quis metus non vehicula. Morbi luctus mauris vitae posuere eleifend. Quisque in ligula tristique, ultrices velit non, gravida augue. Phasellus non convallis diam.
+
+
+        </li>
+        <li>Integer non lobortis sem. Phasellus blandit ut est a ornare. Morbi tristique, dui a vehicula pretium, felis tellus porta ante, at porta lectus eros et est. Maecenas sollicitudin volutpat velit, sed lobortis velit ullamcorper eget. Aenean commodo odio mauris, sed facilisis turpis venenatis ac. Aliquam at turpis eu lectus tempor faucibus vitae tristique est. Nullam ac semper mauris, a dictum tellus. Aliquam eros quam, porta a congue eu, convallis nec ipsum. Aliquam eleifend mi et tortor scelerisque faucibus. Nulla aliquet dolor ut mauris fringilla, sit amet sollicitudin mi aliquam. Pellentesque aliquam a nunc eget malesuada. Donec pharetra urna vel lobortis vehicula.
+
+        </li>
+
+        <li>dsfsdInteger non lobortis sem. Phasellus blandit ut est a ornare. Morbi tristique, dui a vehicula pretium, felis tellus porta ante, at porta lectus eros et est. Maecenas sollicitudin volutpat velit, sed lobortis velit ullamcorper eget. Aenean commodo odio mauris, sed facilisis turpis venenatis ac. Aliquam at turpis eu lectus tempor faucibus vitae tristique est. Nullam ac semper mauris, a dictum tellus. Aliquam eros quam, porta a congue eu, convallis nec ipsum. Aliquam eleifend mi et tortor scelerisque faucibus. Nulla aliquet dolor ut mauris fringilla, sit amet sollicitudin mi aliquam. Pellentesque aliquam a nunc eget malesuada. Donec pharetra urna vel lobortis vehicula.
+
+        </li>
+
+        <li>
+            <div>
+                <h1>23213</h1>
+            </div>
+
+        </li>
+    </ul>
+</div>
